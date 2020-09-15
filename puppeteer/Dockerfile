@@ -14,6 +14,6 @@ RUN  apt-get update \
      && rm -rf /var/lib/apt/lists/*
 
 # Install Puppeteer under /node_modules so it's available system-wide
-RUN npm i puppeteer@5.3.0 koa@2.13.0 -g  --unsafe-perm=true  --allow-root
+RUN npm i puppeteer@5.3.0 -g  --unsafe-perm=true  --allow-root
 
 CMD ["/bin/bash"]
