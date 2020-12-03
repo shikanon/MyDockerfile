@@ -20,4 +20,5 @@ RUN apt-get install docker-ce docker-ce-cli containerd.io -y
 
 RUN curl -L https://storage.googleapis.com/kubernetes-release/release/v1.19.0/bin/linux/amd64/kubectl -o /usr/bin/kubectl && chmod +x /usr/bin/kubectl
 
+ENTRYPOINT ["/usr/bin/dumb-init" "/entrypoint"]
 CMD ["run" "--user=gitlab-runner" "--working-directory=/home/gitlab-runner"]
